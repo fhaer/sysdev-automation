@@ -1,0 +1,16 @@
+name: Node.js CI
+
+on: workflow_dispatch
+
+jobs:
+  build_and_unit_test_with_bug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm install mocha chai ts-node cross-env @types/chai @types/mocha
+      - run: npx mocha tests/unit/password_test_with_bug.js --timeout 10000 --slow 900
+      
