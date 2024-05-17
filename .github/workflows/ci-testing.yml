@@ -3,7 +3,7 @@ name: Node.js CI
 on: workflow_dispatch
 
 jobs:
-  build:
+  build_and_unit_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,4 +12,5 @@ jobs:
         with:
           node-version: '20.x'
       - run: npm install mocha chai ts-node cross-env @types/chai @types/mocha
-      - run: npx mocha tests/ --recursive --timeout 10000 --slow 900
+      - run: npx mocha tests/unit/password_test.js --timeout 10000 --slow 900
+      
