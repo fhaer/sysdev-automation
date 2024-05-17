@@ -1,2 +1,1 @@
-# sysdev-automation
-Demo repository for automation
+# Demo repository for automation
