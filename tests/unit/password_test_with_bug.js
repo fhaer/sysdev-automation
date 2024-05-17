@@ -2,7 +2,7 @@
 
 var chai = require('chai');
 var should = chai.should();
-var passwordHelper = require('../../model/password');
+var passwordHelper = require('../../model/password_with_bug');
 
 describe('Password Helper', function() {
   describe('#hash() - password hashing', function() {
